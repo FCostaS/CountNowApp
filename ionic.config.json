@@ -1,0 +1,7 @@
+{
+    "name": "CountNow",
+    "integrations": {
+        "cordova": {}
+    },
+    "type": "ionic-angular"
+}
