@@ -1,0 +1,63 @@
+page-login {
+  ion-header {
+    //@include header-styles(color($colors, header, base), color($colors, header, contrast));
+  }
+
+  .error-message{
+   color: red;
+  }
+  .submit-button
+  {
+    margin: 0px;
+    margin-top: 20px;
+    //@include call-to-action-button-styles(color($colors, button, base), color($colors, button, contrast));
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border-top-left-radius: 18px;
+
+  }
+
+  .twitter-button{
+    margin: 0px;
+    margin-top: 20px;
+    //@include call-to-action-button-styles(color($colors, twitter, base), color($colors, twitter, contrast));
+  }
+  .facebook-button
+  {
+    margin: 0px;
+    //@include call-to-action-button-styles(color($colors, facebook, base), color($colors, facebook, contrast));
+  }
+
+  .google-button
+  {
+    margin: 0px;
+    margin-top: 20px;
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border-top-left-radius: 18px;
+    //@include call-to-action-button-styles(color($colors, google, base), color($colors, google, contrast));
+  }
+  .btn-facebook{
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border-top-left-radius: 18px;
+  }
+  .btn-gplus{
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border-top-left-radius: 18px;
+  }
+/*  #mail{
+    background-color: #F0FFFF;
+  }
+  #pass{
+    background-color: #F0FFFF;
+  }
+*/
+
+
+}

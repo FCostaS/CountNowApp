@@ -1,0 +1,35 @@
+<!--
+  Generated template for the ImagensEstabPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Imagens do Estabelecimento</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<div *ngIf="showEstabInfo">
+    <button ion-button block type="button" (click)='addImage()'>Adicionar Imagem</button>
+    <!--<button ion-button block type="button" (click)='addImage2()'>Adicionar Imagem2</button>
+    <button ion-button block type="button" (click)='addImage3()'>Adicionar Imagem3</button>
+  -->
+</div>
+
+  <ion-list no-lines>
+    <ion-item-sliding *ngFor="let imagem of ListaImg | async">
+
+      <ion-item (click)="actionSheetImagem(imagem)">
+          <img [src]="imagem.img" />
+      </ion-item>
+
+    </ion-item-sliding>
+  </ion-list>
+
+
+</ion-content>

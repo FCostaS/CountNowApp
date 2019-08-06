@@ -1,0 +1,46 @@
+page-listar-estab {
+  .item-space{
+    margin: 0px auto;
+    font-size: 13px;
+  }
+
+  .list-header{
+    font-size: 20px;
+  }
+
+  .button-est-list{
+    //margin: 10px;
+  }
+
+  .card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 27%;
+    font-size: 1.9em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    white-space: normal;
+  }
+
+  .card-subtitle {
+    font-size: 1.2em;
+    position: absolute;
+    text-align: bottom;
+    top: 80%;
+    width: 100%;
+    color: #fff;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    vertical-align:text-bottom;
+  }
+
+}
+
+}

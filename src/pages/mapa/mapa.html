@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mapa </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-fab top right edge>
+    <button ion-fab mini>
+      <ion-icon name="basket"></ion-icon>
+    </button>
+    <ion-fab-list side="bottom">
+      <button ion-fab color="primary" (click)="abrirModalProdutos()"> <ion-icon name="add"></ion-icon> </button>
+      <button ion-fab color="primary" (click)="abrirRemoverInteresses()"> <ion-icon name="remove"></ion-icon> </button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <input ion-input type="number" id="distancia" (change)='setDistanciaMaxima("distancia")' placeholder="Informe a distância maxima dos estabelecimentos que deseja vizualizar.">
+
+  <div #map id="map"></div>
+    Latitude: {{Mapa.Localizacao.latitude}} Longitude: {{Mapa.Localizacao.longitude}}
+</ion-content>

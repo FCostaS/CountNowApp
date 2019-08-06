@@ -1,0 +1,30 @@
+<!--
+  Generated template for the ModalOfertasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ofertas</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Voltar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ng-container *ngFor="let oferta of ListaOfertas | async">
+    <ion-card *ngIf="oferta.Estabelecimento == provEstab.EstabAtual.key">
+        <ion-card-content>
+            <ion-card-title>
+                {{oferta.Produto}}
+            </ion-card-title>
+            {{oferta.Descricao}}
+        </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>

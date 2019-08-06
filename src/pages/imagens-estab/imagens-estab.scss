@@ -1,0 +1,44 @@
+page-imagens-estab {
+  .card-background-page {
+
+    img{
+        max-width:450px;
+        max-height:450px;
+    }
+
+  ion-card {
+    position: relative;
+    text-align: center;
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 27%;
+    font-size: 1.9em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    white-space: normal;
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+
+  .card-subtitle {
+    font-size: 1.2em;
+    position: absolute;
+    text-align: bottom;
+    top: 80%;
+    width: 100%;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    vertical-align:text-bottom;
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+
+}
+
+}
