@@ -1,0 +1,32 @@
+<!--
+  Generated template for the RelatarProblemasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Relatar Problemas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form class="form" [formGroup]="relatarProblemasForm" (ngSubmit)="relatarProblemas(relatarProblemasForm.value)">
+
+    <ion-item>
+      <ion-label floating>Assunto</ion-label>
+      <ion-input type="text" formControlName="assunto" class="form-controll"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Por favor, descreva o problema</ion-label>
+      <ion-textarea type="text" formControlName="descricao" class="form-controll"></ion-textarea>
+    </ion-item>
+
+    <button ion-button block class="submit-button" type="submit" >Relatar Problema</button>
+  </form>
+
+</ion-content>

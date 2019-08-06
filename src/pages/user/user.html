@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-title>Meu Perfil</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-fab top right edge>
+    <button ion-fab mini>
+      <ion-icon name="basket"></ion-icon>
+    </button>
+    <ion-fab-list side="bottom">
+      <button ion-fab color="primary" (click)="abrirModalProdutos()"> <ion-icon name="add"></ion-icon> </button>
+      <button ion-fab color="primary" (click)="abrirRemoverInteresses()"> <ion-icon name="remove"></ion-icon> </button>
+    </ion-fab-list>
+  </ion-fab>
+
+    <ion-card>
+        <!--<img [src]="user.image"/>-->
+        <ion-card-content>
+            <ion-card-title>
+                {{user.name}}
+            </ion-card-title>
+
+            <!--<p>Latitude: {{GPS.Localizacao.latitude}}</p>
+
+            <p>Longitude: {{GPS.Localizacao.longitude}}</p>
+
+            <p>Acuracia: {{GPS.Localizacao.acuracia}}</p>
+          -->
+
+            <p>
+            </p>
+        </ion-card-content>
+
+        <ion-item>
+          <ion-label>Receber Notificações</ion-label>
+          <ion-toggle [(ngModel)]="notify.ReceberNotificacoes" (ionChange)="updateNotification()"></ion-toggle>
+        </ion-item>
+
+        <button ion-button block type="button" (click)='relatarProblemas()'>Relatar Problemas</button>
+        <button ion-button block type="button" (click)='abrirSolit()'>Fazer uma Solicitação</button>
+        <div *ngIf="showImage">
+        <button ion-button block type="button" (click)='gotoImages()'>Minhas Imagens</button>
+        </div>
+        <button ion-button block type="button" (click)='logout()'>Logout</button>
+    </ion-card>
+</ion-content>

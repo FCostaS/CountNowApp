@@ -1,0 +1,93 @@
+<!--
+  Generated template for the ViewofertaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{Offer.OfertaAtual.Produto}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <img [src]="picture" style="width: 100%" [hidden]="picture === null">
+
+</ion-content>
+-->
+
+<ion-header>
+
+  <ion-navbar class = "barra">
+    <ion-title>Voltar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class = "auth-page2">
+<!--
+  <ion-fab right top edge (click)="openCart()">
+   <button ion-fab color="danger"><ion-icon name="cart"></ion-icon></button>
+  </ion-fab>
+-->
+<ion-card class = "card1">
+ <ion-slides autoplay="0" loop="true" class = "card1">
+  <ion-slide>
+   <img [src]="Offer.OfertaAtual.URL" style="width: 100%" [hidden]="Offer.OfertaAtual.Produto === null">
+  </ion-slide>
+ </ion-slides>
+
+   <ion-card-content >
+    <ion-card-title >
+      {{Offer.OfertaAtual.Produto}} &nbsp;
+    </ion-card-title>
+
+    <ion-grid >
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button icon-left block outline color="#0000ff" class = bpreco><ion-icon name="md-pricetag"></ion-icon> R$ {{Offer.OfertaAtual.Preco}}</button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button icon-left block outline color="#0000ff" class = bestoque><ion-icon name="ios-filing"></ion-icon> Estoque Inicial: {{Offer.OfertaAtual.EstoqueInicial}}</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--mexi aqui-->
+     <ion-card-title>
+       Período da Oferta
+     </ion-card-title>
+
+     <ion-grid>
+       <ion-row>
+         <ion-col col-6>
+           <button ion-button icon-left block outline color="#0000ff" class = pinicio><ion-icon name="ios-battery-full"></ion-icon> Início: {{Offer.OfertaAtual.Inicio}}</button>
+         </ion-col>
+         <ion-col col-6>
+           <button ion-button icon-left block outline color= #993333 class = pfim><ion-icon name="ios-battery-dead"></ion-icon>Fim: {{Offer.OfertaAtual.Fim}}</button>
+         </ion-col>
+       </ion-row>
+     </ion-grid>
+
+       <ion-card-content class = "card1=2">
+         <ion-card-title>
+           Detalhes
+         </ion-card-title>
+          {{Offer.OfertaAtual.Descricao}}
+       </ion-card-content>
+
+       <ion-card-content class = "card1=2">
+         <ion-card-title>
+           Grupo da Oferta
+         </ion-card-title>
+          {{Offer.OfertaAtual.Grupo}}
+       </ion-card-content>
+
+   </ion-card-content>
+ </ion-card>
+
+
+
+</ion-content>

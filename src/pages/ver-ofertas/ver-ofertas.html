@@ -1,0 +1,88 @@
+<!--
+  Generated template for the VerOfertasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Ver Ofertas</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="auth-page2" padding>
+
+
+  <ion-list-header class="item item-trns text-center">
+    Filtros:
+  </ion-list-header>
+
+  <ion-fab top right edge>
+    <button ion-fab mini>
+      <ion-icon name="basket"></ion-icon>
+    </button>
+    <ion-fab-list side="bottom">
+      <button ion-fab color="primary" (click)="abrirModalProdutos()"> <ion-icon name="add"></ion-icon> </button>
+      <button ion-fab color="primary" (click)="abrirRemoverInteresses()"> <ion-icon name="remove"></ion-icon> </button>
+    </ion-fab-list>
+  </ion-fab>
+
+    <div class="filtro">
+      <ion-item class="filtro">
+        <ion-label> <ion-icon name="checkmark-circle"></ion-icon> Por Data</ion-label>
+          <ion-toggle (ionChange)="filtrarPorData()"></ion-toggle>
+      </ion-item>
+
+      <ion-item id="campo_data" hidden>
+          <ion-datetime [min]="minDate" displayFormat="YYYY-MM-DD" [(ngModel)]="myDate" (ionChange)='setData($event)' placeholder="Informe a data maxima."></ion-datetime>
+      </ion-item>
+    </div>
+
+    <div class="filtro">
+      <ion-item class="filtro">
+        <ion-label> <ion-icon name="checkmark-circle"></ion-icon> Por Distância</ion-label>
+          <ion-toggle (ionChange)="filtrarPorDistancia()"></ion-toggle>
+      </ion-item>
+
+      <input ion-input hidden type="number" id="campo_distancia" [(ngModel)]="distanciaMaxima" class="filtro_texto" (change)='setDistanciaMaxima()' placeholder="Informe a distância maxima">
+    </div>
+
+    <ion-item class="filtro">
+        <ion-label>Oferta Por Grupo</ion-label>
+        <ion-select (ionChange)='filtrarPorGrupo($event)'>
+            <ion-option value="Dia dos pais">Dia dos pais</ion-option>
+            <ion-option value="Dia das maes">Dia das mães</ion-option>
+            <ion-option value="Liquidacao de natal">Liquidação de natal</ion-option>
+            <ion-option value="Black friday">Black Friday</ion-option>
+            <ion-option value="Halloween">Halloween</ion-option>
+            <ion-option value="Pascoa">Páscoa</ion-option>
+            <ion-option value="Promocao">Promoção</ion-option>
+            <ion-option value="Nenhum">Nenhum</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item class="filtro">
+      <ion-label> <ion-icon name="checkmark-circle"></ion-icon> Mostrar Apenas Interesses</ion-label>
+        <ion-toggle (ionChange)="filtrarInteresses()"></ion-toggle>
+    </ion-item>
+
+  <ion-list-header class="item item-trns text-center">
+  Produtos:
+  </ion-list-header>
+
+    <ng-container *ngFor="let oferta of ListaOfertas">
+        <ion-card *ngIf="((!this.provider.filtrarInt && !(this.provider.filtrarData && this.data) && !this.provider.filtrarGrupo && !this.provider.filtrarDistancia) || oferta.mostrar) && oferta.Status != 'Desativada'"  (click)="ViewDetails(oferta)">
+            <ion-card-content>
+                <ion-card-title>
+                    {{oferta.Produto}}
+                </ion-card-title>
+                <img [src]="oferta.URL" style="width: 100%" [hidden]="oferta.Produto === null">
+                {{oferta.Descricao}}
+            </ion-card-content>
+        </ion-card>
+    </ng-container>
+
+</ion-content>

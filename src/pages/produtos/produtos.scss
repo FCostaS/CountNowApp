@@ -1,0 +1,88 @@
+page-produtos {
+  .auth-page3 {
+    text-shadow: 1px 1px 4px #ffffff;
+    color: #000000;
+    background-color: #ffffff;
+    &::after {
+      content: "";
+      background: url("../assets/imgs/bg2.jpg") no-repeat;
+      background-size: cover;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: 0;
+    }
+
+  }
+
+  #pgInicial{
+    width: 100%;
+    margin-left: 10%;
+
+  }
+
+  #botaoMostrarFormInserirProduto{
+    width: 30%;
+    margin-left: 35%;
+    display: inline-block;
+  }
+
+  #botaoListarProdutos{
+    width: 32.5%;
+    margin-left: 5%;
+    display: inline-block;
+  }
+
+  #formInserirProduto{
+    border-radius: 10px;
+    margin-top: 5%;
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  #botaoInserirProduto{
+    border-radius: 10px;
+    width: 50%;
+    margin-left: 25%;
+    display: inline-block;
+  }
+
+  #botaoDeclararInteresse{
+    border-radius: 10px;
+    width: 50%;
+    margin-left: 25%;
+    display: inline-block;
+  }
+
+  #mostrarProdutos{
+    border-radius: 10px;
+    margin-top: 5%;
+    width: 50%;
+    margin-left: 22.5%;
+  }
+
+  ion-item-sliding{
+    border-radius: 10px;
+    margin-top:1%;
+  }
+
+
+  ion-item{
+    border-radius: 10px;
+  }
+
+  .lista-produtos{
+    border-radius: 10px;
+    margin-right: 20%;
+    text-align: center;
+
+  }
+
+
+  /*
+  .produtos{
+    border-radius: 15px;
+  }*/
+}

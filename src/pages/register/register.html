@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="form-content">
+
+  <ion-list radio-group>
+
+        <ion-list-header class="title">
+          Conta a ser criada:
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Cliente</ion-label>
+          <ion-radio value="cliente" (ionSelect)="atualizarForm(1)"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Estabelecimento</ion-label>
+          <ion-radio value="estab" (ionSelect)="atualizarForm(2)"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Admin</ion-label>
+          <ion-radio value="admin" (ionSelect)="atualizarForm(3)"></ion-radio>
+        </ion-item>
+
+  </ion-list>
+
+  <ion-item>
+    <ion-label class="title">Deseja receber notificações?</ion-label>
+    <ion-toggle [(ngModel)]="notify.ReceberNotificacoes"></ion-toggle>
+  </ion-item>
+
+  <ion-list-header class="title">
+    Informações do Usuário:
+  </ion-list-header>
+
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="tryRegister(registerForm.value)">
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+
+    <!-- Informação exclusiva do cliente ======================================================== -->
+  <div *ngIf = "infoCliente">
+    <ion-item>
+      <ion-label floating>CPF</ion-label>
+      <ion-input type="number" formControlName="cpf" class="form-controll"></ion-input>
+    </ion-item>
+  </div>
+    <!-- Fim da informação exclusiva do cliente ================================================= -->
+
+    <!-- Informação exclusiva do estabelecimento ================================================ -->
+  <div *ngIf = "infoEstabelecimento">
+    <ion-item>
+      <ion-label floating>CNPJ</ion-label>
+      <ion-input type="number" formControlName="cnpj" class="form-controll"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Categoria</ion-label>
+      <ion-input type="text" formControlName="categoria" class="form-controll"></ion-input>
+    </ion-item>
+  </div>
+    <!-- Fim da informação exclusiva do estabelecimento ======================================== -->
+
+    <ion-item>
+      <ion-label floating>Estado</ion-label>
+      <ion-input type="text" formControlName="estado" class="form-controll"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Cidade</ion-label>
+      <ion-input type="text" formControlName="cidade" class="form-controll"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Endereco</ion-label>
+      <ion-input type="text" formControlName="endereco" class="form-controll"></ion-input>
+    </ion-item>
+
+    <button ion-button block class="submit-button" type="submit" >Register</button>
+    <label class="error-message">{{errorMessage}}</label>
+    <label class="success-message">{{successMessage}}</label>
+    <br>
+    <div>
+      <p>Already have an account? <a (click)="goLoginPage()">Try to Log in</a></p>
+    </div>
+    <br>
+  </form>
+
+  <button ion-button block type="submit" class="facebook-button" (click)="tryFacebookLogin(registerForm.value)">Register with Facebook</button>
+  <button ion-button block type="submit" class="google-button"  (click)="tryGoogleLogin(registerForm.value)">Register with Google</button>
+</ion-content>

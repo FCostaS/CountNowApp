@@ -1,0 +1,90 @@
+page-ver-ofertas {
+  .auth-page2 {
+    text-shadow: 1px 1px 4px #ffffff;
+    color: #000000;
+    background-color: #ffffff;
+    &::after {
+      content: "";
+      background: url("../assets/imgs/bg.jpg") no-repeat;
+      background-size: cover;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: 0;
+    }
+  }
+  .ofertas-em-lista{}
+
+  .filtro{
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .filtro_texto{
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    font-size: large;
+    text-align: center;
+  }
+
+  #campo_data{
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+  }
+
+  ion-header {
+    //@include header-styles(color($colors, header, base), color($colors, header, contrast));
+  }
+
+  .error-message
+  {
+   color: red;
+  }
+
+  .success-message{
+    color: green;
+  }
+
+  .title{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+  }
+
+  .item.item-trns {
+  font-size: 20px;
+	border-color: rgba(0, 0, 0, 0);
+	background-color: rgba(0, 0, 0, 0);
+	color: black;
+  font-weight: bold;
+}
+
+  .submit-button
+  {
+    margin: 0px;
+    margin-top: 20px;
+    //@include call-to-action-button-styles(color($colors, button, base), color($colors, button, contrast));
+  }
+
+  .twitter-button{
+    margin: 0px;
+    margin-top: 20px;
+  //  @include call-to-action-button-styles(color($colors, twitter, base), color($colors, twitter, contrast));
+  }
+  .facebook-button
+  {
+    margin: 0px;
+  //	@include call-to-action-button-styles(color($colors, facebook, base), color($colors, facebook, contrast));
+  }
+
+  .google-button
+  {
+    margin: 0px;
+    margin-top: 20px;
+  //	@include call-to-action-button-styles(color($colors, google, base), color($colors, google, contrast));
+  }
+}

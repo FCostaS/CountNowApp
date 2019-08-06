@@ -1,0 +1,25 @@
+<!--
+  Generated template for the ModalRemoverInteressePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Remover</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Voltar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ng-container *ngFor="let interesse of listaInteresses | async">
+    <ion-item (click)="doDelete(interesse)">
+      {{interesse.produto}}
+    </ion-item>
+  </ng-container>
+</ion-content>
